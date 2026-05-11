@@ -216,27 +216,58 @@ export default function Home() {
         "Your current AI stack appears balanced for general operational productivity."
       );
 
-      if (
-        useCase === "Research" &&
-        (toolName === "GitHub Copilot" || toolName === "Cursor")
-      ) {
+if (
+  useCase === "Coding" &&
+  toolName !== "Cursor" &&
+  toolName !== "GitHub Copilot"
+) {
 
-      setRecommendedTool(
-        "ChatGPT or Claude may provide stronger research and long-form reasoning capabilities."
-      );
+  setRecommendedTool(
+    "Cursor or GitHub Copilot may provide better coding-focused workflows."
+  );
 
-    }
+}
 
-    if (
-      useCase === "Writing" &&
-      toolName === "Cursor"
-    ) {
+else if (
+  useCase === "Research" &&
+  toolName !== "ChatGPT" &&
+  toolName !== "Claude"
+) {
 
-    setRecommendedTool(
-    "ChatGPT may provide a smoother experience for writing and content generation workflows."
-   );
+  setRecommendedTool(
+    "ChatGPT or Claude may provide stronger research and reasoning capabilities."
+  );
 
-  }
+}
+
+else if (
+  useCase === "Writing" &&
+  toolName !== "ChatGPT"
+) {
+
+  setRecommendedTool(
+    "ChatGPT may provide a smoother writing and content generation experience."
+  );
+
+}
+
+else if (
+  useCase === "Data Analysis" &&
+  toolName !== "Claude" &&
+  toolName !== "ChatGPT"
+) {
+
+  setRecommendedTool(
+    "Claude or ChatGPT may provide stronger analytical and long-context workflows."
+  );
+
+}
+
+else {
+
+  setRecommendedTool("");
+
+}
 
     }
 

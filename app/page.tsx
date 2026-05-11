@@ -215,8 +215,9 @@ export default function Home() {
       setToolInsight(
         "Your current AI stack appears balanced for general operational productivity."
       );
+    }
 
-if (
+    if (
   useCase === "Coding" &&
   toolName !== "Cursor" &&
   toolName !== "GitHub Copilot"
@@ -269,11 +270,9 @@ else {
 
 }
 
-    }
-
     setLoading(false);
 
-  }, 1500);
+}, 1500);
 
 };
 
